@@ -18,7 +18,7 @@ import upv.dadm.ex24_settingssharedpreferences.R
 class SettingsFragment: PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        // Create teh preferences hierarchy from the XML resource file
+        // Create the preferences hierarchy from the XML resource file
         setPreferencesFromResource(R.xml.preferences, rootKey)
     }
 }

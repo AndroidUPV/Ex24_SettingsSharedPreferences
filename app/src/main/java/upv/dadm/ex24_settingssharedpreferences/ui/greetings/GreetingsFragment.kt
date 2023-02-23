@@ -28,6 +28,7 @@ class GreetingsFragment : Fragment(R.layout.fragment_greetings) {
 
     // Backing property to resource binding
     private var _binding: FragmentGreetingsBinding? = null
+
     // Property valid between onCreateView() and onDestroyView()
     private val binding
         get() = _binding!!
@@ -46,7 +47,7 @@ class GreetingsFragment : Fragment(R.layout.fragment_greetings) {
         }
         // Update the text color of the message according to the one selected
         viewModel.textColor.observe(viewLifecycleOwner) { color ->
-            binding.tvGreetings.setTextColor(Color.parseColor(color))
+            binding.tvGreetings.setTextColor(Color.parseColor(color.ifEmpty { getString(R.string.default_color) }))
         }
         // Update the visibility of the icon according to the selected option
         viewModel.isIconVisible.observe(viewLifecycleOwner) { isVisible ->
