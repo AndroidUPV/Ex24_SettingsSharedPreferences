@@ -22,6 +22,7 @@ import javax.inject.Singleton
  * for third party components and Builders.
  */
 @Module
+// The Hilt annotation @SingletonComponent creates and destroy instances following the lifecycle of the Application
 @InstallIn(SingletonComponent::class)
 class GreetingsProviderModule {
 
