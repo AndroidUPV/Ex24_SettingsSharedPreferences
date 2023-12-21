@@ -1,8 +1,12 @@
 /*
- * Copyright (c) 2022
- * David de Andrés and Juan Carlos Ruiz
- * Development of apps for mobile devices
- * Universitat Politècnica de València
+ * Copyright (c) 2022-2023 Universitat Politècnica de València
+ * Authors: David de Andrés and Juan Carlos Ruiz
+ *          Fault-Tolerant Systems
+ *          Instituto ITACA
+ *          Universitat Politècnica de València
+ *
+ * Distributed under MIT license
+ * (See accompanying file LICENSE.txt)
  */
 
 package upv.dadm.ex24_settingssharedpreferences.ui.greetings
@@ -19,7 +23,7 @@ import javax.inject.Inject
 // The Hilt annotation @HiltEntryPoint is required to receive dependencies from its parent class
 @HiltViewModel
 class GreetingsViewModel @Inject constructor(
-    private val greetingsRepository: GreetingsRepository
+    greetingsRepository: GreetingsRepository
 ) : ViewModel() {
 
     // User name
