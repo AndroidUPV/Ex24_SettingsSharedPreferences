@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2024 Universitat Politècnica de València
+ * Copyright (c) 2022-2026 Universitat Politècnica de València
  * Authors: David de Andrés and Juan Carlos Ruiz
  *          Fault-Tolerant Systems
  *          Instituto ITACA
@@ -11,12 +11,12 @@
 
 package upv.dadm.ex24_settingssharedpreferences.ui.greetings
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import androidx.core.graphics.toColorInt
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -56,7 +56,8 @@ class GreetingsFragment : Fragment(R.layout.fragment_greetings), MenuProvider {
         }
         // Update the text color of the message according to the one selected
         viewModel.textColor.observe(viewLifecycleOwner) { color ->
-            binding.tvGreetings.setTextColor(Color.parseColor(color.ifEmpty { getString(R.string.default_color) }))
+            binding.tvGreetings.setTextColor(color.ifEmpty { getString(R.string.default_color) }
+                .toColorInt())
         }
         // Update the visibility of the icon according to the selected option
         viewModel.isIconVisible.observe(viewLifecycleOwner) { isVisible ->
